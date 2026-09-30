@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="light"],
+html:not([data-theme="dark"]):not(.dark) {
+  --anchor-green: #6FA98A;
+  --anchor-green-hover: #5d9377;
+  --anchor-green-soft: #edf5f0;
+  
+  --bloom-coral: #E8A87C;
+  --bloom-coral-hover: #d7966a;
+  --bloom-coral-soft: #fcf4ee;
+  
+  --soft-mint: #B7E4C7;
+  --soft-mint-soft: #f0faf3;
+  --soft-mint-text: #26593F;
+
+  --terracotta: #C06B3E;
+  --terracotta-soft: #fcf4ee;
+  --terracotta-text: #A05C2C;
+  
+  --cloud-base: #FAF7F2;
+  --cloud-card: #FFFFFF;
+  --cloud-subtle: #F2EDE4;
+  --cloud-border: #E8E2D8;
+  --header-bg: #FAF7F2;
+  --header-bg-blur: rgba(250, 247, 242, 0.92);
+  
+  --deep-taupe: #4A423B;
+  --deep-taupe-muted: #7A726A;
+  --deep-taupe-light: #A39B92;
+  
+  /* CRITICAL RULE: Reserved exclusively for the SOS/Crisis action */
+  --alert-red: #D64545;
+  --alert-red-hover: #bf3838;
+  --alert-red-soft: #feecec;
+  --alert-red-text: #9C2E2E;
+
+  --app-font-scale: 18px;
+}
+
+[data-theme="dark"],
+html.dark {
+  --anchor-green: #6FA98A;
+  --anchor-green-hover: #5d9377;
+  --anchor-green-soft: #23352C;
+  
+  --bloom-coral: #E8A87C;
+  --bloom-coral-hover: #d7966a;
+  --bloom-coral-soft: #382B22;
+  
+  --soft-mint: #B7E4C7;
+  --soft-mint-soft: #1E3326;
+  --soft-mint-text: #A7F3D0;
+
+  --terracotta: #E8A87C;
+  --terracotta-soft: #382B22;
+  --terracotta-text: #FDE68A;
+
+  --cloud-base: #23211E;
+  --cloud-card: #2D2A26;
+  --cloud-subtle: #38342F;
+  --cloud-border: #443F39;
+  --header-bg: #282522;
+  --header-bg-blur: rgba(40, 37, 34, 0.94);
+  
+  --deep-taupe: #F2EDE6;
+  --deep-taupe-muted: #C4BCB3;
+  --deep-taupe-light: #8E877F;
+  
+  --alert-red: #D64545;
+  --alert-red-hover: #bf3838;
+  --alert-red-soft: #3D2222;
+  --alert-red-text: #FCA5A5;
+}
+
+html, body {
+  min-height: 100%;
+  font-size: var(--app-font-scale, 18px);
+  background-color: var(--cloud-base);
+  color: var(--deep-taupe);
+  font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Nunito', 'Atkinson Hyperlegible', -apple-system, sans-serif;
+}
+
+/* Accessible focus rings */
+*:focus-visible {
+  outline: 3px solid var(--anchor-green);
+  outline-offset: 3px;
+}
+
+/* Tap targets minimum 48px to 64px */
+.tap-target {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+.tap-target-senior {
+  min-height: 56px;
+  min-width: 56px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cloud-border);
+  border-radius: 9999px;
+}
+
+/* Printable Doctor Report Styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

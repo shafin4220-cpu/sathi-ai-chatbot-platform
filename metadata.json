@@ -1,0 +1,6 @@
+{
+  "name": "Sathi — AI Care Companion",
+  "description": "An accessible, regulation-aware AI care companion for chronic condition management and elderly independent living.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
